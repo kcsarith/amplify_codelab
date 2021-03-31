@@ -10,6 +10,11 @@
       "StackName": "amplify-amplifycodelab-awstest-232715",
       "StackId": "arn:aws:cloudformation:us-west-2:740645233048:stack/amplify-amplifycodelab-awstest-232715/22ed1670-91ea-11eb-8eb4-024434d5b191",
       "AmplifyAppId": "d1snuw376bu1c9"
+    },
+    "categories": {
+      "auth": {
+        "cognito132da733": {}
+      }
     }
   }
 }
