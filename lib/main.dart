@@ -3,6 +3,7 @@ import 'package:amplify_flutter/amplify.dart';
 import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'amplifyconfiguration.dart';
+import 'modules/home/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,8 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _amplifyConfigured = false;
-
+  bool amplifyConfigured = false;
   @override
   void initState() {
     super.initState();
@@ -29,58 +29,28 @@ class _MyAppState extends State<MyApp> {
     Amplify.addPlugin(AmplifyAnalyticsPinpoint());
     Amplify.addPlugin(AmplifyAuthCognito());
 
+    amplifyConfigured = true;
     // Once Plugins are added, configure Amplify
     // Note: Amplify can only be configured once.
     try {
       await Amplify.configure(amplifyconfig);
     } on AmplifyAlreadyConfiguredException {
       print("Amplify was already configured. Was the app restarted?");
-    }
-    try {
-      setState(() {
-        _amplifyConfigured = true;
-      });
     } catch (e) {
       print(e);
     }
-
   }
-
-// Send an event to Pinpoint
-  void _recordEvent() async {
-    AnalyticsEvent event = AnalyticsEvent('test');
-    event.properties.addBoolProperty('boolKey', true);
-    event.properties.addDoubleProperty('doubleKey', 10.0);
-    event.properties.addIntProperty('intKey', 10);
-    event.properties.addStringProperty('stringKey', 'stringValue');
-    Amplify.Analytics.recordEvent(event: event);
-  }
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Amplify Core example app'),
-            ),
-            body: ListView(padding: EdgeInsets.all(10.0), children: <Widget>[
-              Center(
-                child: Column (
-                    children: [
-                      const Padding(padding: EdgeInsets.all(5.0)),
-                      Text(
-                          _amplifyConfigured ? 'configured' : 'not configured'
-                      ),
-                      ElevatedButton(
-                          onPressed: _amplifyConfigured ? _recordEvent : null,
-                          child: const Text('record event')
-                      )
-                    ]
-                ),
-              )
-            ])
-        )
+      title: 'Amplify TEST',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[50],
+        primaryColor: Colors.purple,
+      ),
+      home: HomeScreen(amplifyConfigured),
     );
   }
 }
