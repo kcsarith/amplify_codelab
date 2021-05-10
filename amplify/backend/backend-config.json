@@ -1,15 +1,10 @@
 {
   "auth": {
-    "cognito132da733": {
+    "amplifycodelabcbf00916": {
       "service": "Cognito",
-      "serviceType": "managed",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "analytics": {
-    "amplifycodelab": {
-      "service": "Pinpoint",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }
