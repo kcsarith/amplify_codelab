@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplifycodelab-dev-11923-authRole",
-      "UnauthRoleArn": "arn:aws:iam::740645233048:role/amplify-amplifycodelab-dev-11923-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::740645233048:role/amplify-amplifycodelab-dev-11923-authRole",
+      "AuthRoleName": "amplify-amplifycodelab-dev-85139-authRole",
+      "UnauthRoleArn": "arn:aws:iam::740645233048:role/amplify-amplifycodelab-dev-85139-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::740645233048:role/amplify-amplifycodelab-dev-85139-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-amplifycodelab-dev-11923-deployment",
-      "UnauthRoleName": "amplify-amplifycodelab-dev-11923-unauthRole",
-      "StackName": "amplify-amplifycodelab-dev-11923",
-      "StackId": "arn:aws:cloudformation:us-west-2:740645233048:stack/amplify-amplifycodelab-dev-11923/6f4fada0-b168-11eb-9da1-02f40bde202f",
-      "AmplifyAppId": "de39tdky5s2o7"
+      "DeploymentBucketName": "amplify-amplifycodelab-dev-85139-deployment",
+      "UnauthRoleName": "amplify-amplifycodelab-dev-85139-unauthRole",
+      "StackName": "amplify-amplifycodelab-dev-85139",
+      "StackId": "arn:aws:cloudformation:us-west-2:740645233048:stack/amplify-amplifycodelab-dev-85139/9de38300-b1a7-11eb-9aac-021e49679a0b",
+      "AmplifyAppId": "d68tizob4ruvq"
     },
     "categories": {
       "auth": {
-        "amplifycodelabcbf00916": {}
+        "amplifycodelabc5c4b116": {}
       }
     }
   }
