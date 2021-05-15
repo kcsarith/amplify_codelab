@@ -1,12 +1,4 @@
 {
-  "auth": {
-    "amplifycodelabc5c4b116": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "api": {
     "amplifycodelab": {
       "service": "AppSync",
@@ -17,16 +9,20 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": ""
+              "description": "Amplifycodelab API Key"
             }
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
+    }
+  },
+  "auth": {
+    "amplifycodelab4ca17590": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }

@@ -1,6 +1,19 @@
 const amplifyconfig = ''' {
     "UserAgent": "aws-amplify-cli/2.0",
     "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "amplifycodelab": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://hv2r4r6oljdfzhwlgvfy7n4kle.appsync-api.us-west-2.amazonaws.com/graphql",
+                    "region": "us-west-2",
+                    "authorizationType": "API_KEY",
+                    "apiKey": "da2-p36q6iwqercfreljl67ubkbou4"
+                }
+            }
+        }
+    },
     "auth": {
         "plugins": {
             "awsCognitoAuthPlugin": {
@@ -9,18 +22,27 @@ const amplifyconfig = ''' {
                 "IdentityManager": {
                     "Default": {}
                 },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://hv2r4r6oljdfzhwlgvfy7n4kle.appsync-api.us-west-2.amazonaws.com/graphql",
+                        "Region": "us-west-2",
+                        "AuthMode": "API_KEY",
+                        "ApiKey": "da2-p36q6iwqercfreljl67ubkbou4",
+                        "ClientDatabasePrefix": "amplifycodelab_API_KEY"
+                    }
+                },
                 "CredentialsProvider": {
                     "CognitoIdentity": {
                         "Default": {
-                            "PoolId": "us-west-2:bc9348fa-e6e9-4cba-9188-36f4ff01d2ec",
+                            "PoolId": "us-west-2:6802090b-14a2-4880-9ae3-dd50e7a68f57",
                             "Region": "us-west-2"
                         }
                     }
                 },
                 "CognitoUserPool": {
                     "Default": {
-                        "PoolId": "us-west-2_KmPnX4Oqj",
-                        "AppClientId": "10valaj8ltp45dibj72n4pu4ne",
+                        "PoolId": "us-west-2_hpSXLrWVp",
+                        "AppClientId": "1ek4dpdkpfkid16uocagfumsg9",
                         "Region": "us-west-2"
                     }
                 },
@@ -28,35 +50,7 @@ const amplifyconfig = ''' {
                     "Default": {
                         "authenticationFlowType": "USER_SRP_AUTH"
                     }
-                },
-                "AppSync": {
-                    "Default": {
-                        "ApiUrl": "https://h5cgaod7qjdclnakzfhaceh46y.appsync-api.us-west-2.amazonaws.com/graphql",
-                        "Region": "us-west-2",
-                        "AuthMode": "API_KEY",
-                        "ApiKey": "da2-c5xtuodsjvgptin3lo7tuiotf4",
-                        "ClientDatabasePrefix": "amplifycodelab_API_KEY"
-                    },
-                    "amplifycodelab_AWS_IAM": {
-                        "ApiUrl": "https://h5cgaod7qjdclnakzfhaceh46y.appsync-api.us-west-2.amazonaws.com/graphql",
-                        "Region": "us-west-2",
-                        "AuthMode": "AWS_IAM",
-                        "ClientDatabasePrefix": "amplifycodelab_AWS_IAM"
-                    }
                 }
-            }
-        }
-    },
-    "api": {
-        "plugins": {
-            "awsAPIPlugin": {
-                "amplifycodelab": {
-                    "endpointType": "GraphQL",
-                    "endpoint": "https://h5cgaod7qjdclnakzfhaceh46y.appsync-api.us-west-2.amazonaws.com/graphql",
-                    "region": "us-west-2",
-                    "authorizationType": "API_KEY",
-                    "apiKey": "da2-c5xtuodsjvgptin3lo7tuiotf4"
-                },
             }
         }
     }
