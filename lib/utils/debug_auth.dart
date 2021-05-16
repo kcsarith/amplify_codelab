@@ -26,8 +26,9 @@ debugSignIn(String username, String password) async {
   try {
     SignInResult res =
         await Amplify.Auth.signIn(username: username, password: password);
-    return res.isSignedIn;
+    return true;
   } on AuthException catch (error) {
-    return print('EEEEEEEEEEEEEEEEEEEEEEEEEEEEE' + error.message);
+    print('EEEEEEEEEEEEEEEEEEEEEEEEEEEEE' + error.message);
+    return false;
   }
 }
