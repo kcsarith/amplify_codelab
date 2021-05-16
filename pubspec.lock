@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+  amplify_api:
+    dependency: "direct main"
+    description:
+      name: amplify_api
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   amplify_api_plugin_interface:
     dependency: transitive
     description:
@@ -33,6 +40,13 @@ packages:
     dependency: transitive
     description:
       name: amplify_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
+  amplify_datastore:
+    dependency: "direct main"
+    description:
+      name: amplify_datastore
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
