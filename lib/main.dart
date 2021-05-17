@@ -1,7 +1,13 @@
+//import 'package:amplify_codelab/models/ModelProvider.dart';
+import 'package:amplify_api/amplify_api.dart';
+
+import 'models/ModelProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_datastore/amplify_datastore.dart';
 import 'amplifyconfiguration.dart';
+import 'modules/blog/screens/blog.dart';
 import 'modules/home/screens/home_screen.dart';
 
 Future<void> main() async {
@@ -15,7 +21,10 @@ Future<void> _configureAmplify() async {
 
   // Add Pinpoint and Cognito Plugins
   AmplifyAuthCognito authPlugin = AmplifyAuthCognito();
-  Amplify.addPlugins([authPlugin]);
+  AmplifyDataStore datastorePlugin =
+      AmplifyDataStore(modelProvider: ModelProvider.instance);
+  Amplify.addPlugin(datastorePlugin);
+  Amplify.addPlugins([authPlugin, datastorePlugin, AmplifyAPI()]);
 
   // Once Plugins are added, configure Amplify
   // Note: Amplify can only be configured once.
@@ -48,7 +57,8 @@ class _MyAppState extends State<MyApp> {
         scaffoldBackgroundColor: Colors.grey[50],
         primaryColor: Colors.purple,
       ),
-      home: HomeScreen(amplifyConfigured),
+      // home: HomeScreen(),
+      home: BlogScreen(),
     );
   }
 }
