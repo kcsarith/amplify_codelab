@@ -1,10 +1,9 @@
 import 'package:amplify_codelab/modules/home/screens/sign_in_form.dart';
+import 'package:amplify_codelab/modules/home/screens/sign_up_confirm_form.dart';
 import 'package:amplify_codelab/modules/home/screens/sign_up_form.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  final bool amplifyConfigured;
-  HomeScreen(this.amplifyConfigured);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -22,17 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(
             child: Column(
               children: [
-                const Padding(padding: EdgeInsets.all(5.0)),
-                Text(
-                    widget.amplifyConfigured ? 'configured' : 'not configured'),
-                ElevatedButton(
-                  onPressed: () {
-                    print('object');
-                  },
-                  child: const Text('record event'),
-                ),
                 SignInForm(),
                 SignUpForm(),
+                SignUpConfirmForm(),
               ],
             ),
           ),
