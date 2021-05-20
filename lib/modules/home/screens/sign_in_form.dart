@@ -53,20 +53,30 @@ class _SignInFormState extends State<SignInForm> {
               },
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 //will return true if form is valid.
                 if (_formKey.currentState.validate()) {
-                  // if form is valid, display a snackbar
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Username: " +
-                          _usernameTextController.text +
-                          " --- Password: " +
-                          _passwordTextController.text),
-                    ),
-                  );
-                  print(debugSignIn(_usernameTextController.text,
-                      _passwordTextController.text));
+                  bool loginSuccess = await debugSignIn(
+                      _usernameTextController.text,
+                      _passwordTextController.text);
+                  if (loginSuccess) {
+                    // if form is valid, display a snackbar
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Username: " +
+                            _usernameTextController.text +
+                            " --- Password: " +
+                            _passwordTextController.text),
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("LOGIN FAILED"),
+                      ),
+                    );
+                    print('LOOOOOOOOOOOOOOOOOOOOOGIN FAILLLLLLLLLLLLLLLLLLED');
+                  }
                 }
               },
               child: Text('Sign In'),
